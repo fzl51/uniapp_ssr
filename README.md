@@ -34,7 +34,7 @@ npm install
 npm start
 ```
 ## seo优化
-### 直接在组件里使用
+### 直接在页面里使用
 ```html
 	<!-- #ifdef H5 -->
 	<teleport to="head">
