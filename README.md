@@ -39,11 +39,19 @@ npm start
 	<!-- #ifdef H5 -->
 	<teleport to="head">
 		<meta name="description" content="这是一个uniapp_ssr_demo" />
-    <meta name="keywords"   content="uniapp_ssr"/>
+		<meta name="keywords"   content="uniapp_ssr"/>
 	</teleport>
 	<!-- #endif -->
 ```
- 
+
+###或者
+```html
+	 <page-meta>
+	    <head>
+	      <meta name="keywords" content="uni-app ssr" />
+	    </head>
+	  </page-meta>
+```
 ## 注意事项
 1. 不能有环境代码。详情可以看官方的[说明](https://doc.dcloud.net.cn/uni-app-x/web/ssr.html) 比如 window document 
 2. 还有很多api不支持 比如 uni.getSystemInfoSync uni.createSelectorQuery uni.createAnimation
