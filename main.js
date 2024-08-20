@@ -1,4 +1,4 @@
-const webPath = './' //设置server根client文件所在路径
+const webPath = './' //设置server跟client文件所在路径
 const {render} = require(`${webPath}server/entry-server`);
 const express = require('express');
 const app = express();
