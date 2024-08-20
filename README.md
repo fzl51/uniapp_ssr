@@ -33,12 +33,20 @@ npm install
 ```sh
 npm start
 ```
+## seo优化
+### 直接在组件里使用
+```html
+	<!-- #ifdef H5 -->
+	<teleport to="head">
+		<meta name="description" content="这是一个uniapp_ssr_demo" />
+    <meta name="keywords"   content="uniapp_ssr"/>
+	</teleport>
+	<!-- #endif -->
+```
+ 
 ## 注意事项
 1. 不能有环境代码。详情可以看官方的[说明](https://doc.dcloud.net.cn/uni-app-x/web/ssr.html) 比如 window document 
-2. 还有很多api不支持 比如 uni.getSystemInfoSync
-3. App.vue不会调用 需要在main.js挂载钩子
-4. 如果有npm包 需要在服务器上的项目安装一遍
-5. 为每个页面实现不同的meta信息需要自己实现 这个项目只提供uniapp的ssr解决办法。
-6. 注意链接 都是onclik事件 
-7. 如果有不兼容的代码 会node报错 不会服务器渲染 但不影响网页运行
-8. ssr很多代码不兼容 多到让你怀疑人生 做好心里准备。
+2. 还有很多api不支持 比如 uni.getSystemInfoSync uni.createSelectorQuery uni.createAnimation
+3. 注意链接是否是onclik事件 需要使用navigator
+4. 如果有不兼容的代码 会node报错 不会服务器渲染 但不影响网页运行
+5. ssr很多代码不兼容 多到让你怀疑人生 做好心里准备。
