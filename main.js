@@ -24,11 +24,7 @@ app.use(async (req, res, next) => {
         let finalHtml = templateHtml
             .replace('<!--preload-links-->', preloadLinks)
             .replace('<!--app-context-->', appContext)
-            .replace('<!--app-html-->', `
-            <!-- 这里是服务器渲染的 -->
-            ${appHtml}
-           <!-- 服务器渲染结束 -->
-            `);
+            .replace('<!--app-html-->', `${appHtml}`);
         // 设置标题
         finalHtml = finalHtml.replace(/<title>(.*?)<\/title>/, `<title>${title}</title>`);
         finalHtml = finalHtml.replace(/鼠标右键查看源码 如果源码存在此文字则成功/, `
