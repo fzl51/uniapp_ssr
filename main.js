@@ -1,4 +1,5 @@
 const {render} = require("./server/entry-server");
+const ssrMainFest = require('./server/ssr-manifest.json');
 const express = require('express');
 const app = express();
 const fs = require('fs');
@@ -19,7 +20,7 @@ app.use(async (req, res, next) => {
     try {
         console.log('req=>', req.path)
         // 调用 render 函数
-        const {title, headMeta, preloadLinks, appHtml, appContext} = await render(req, {});
+        const {title, headMeta, preloadLinks, appHtml, appContext} = await render(req, ssrMainFest);
         // 替换模板中的占位符
         let finalHtml = templateHtml
             .replace('<!--preload-links-->', preloadLinks)
